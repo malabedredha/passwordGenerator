@@ -7,10 +7,9 @@ let upperAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 let lowerAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-let builtArray = []
 
 function generatePassword() {
-
+  let builtArray = []
   if (confirm("Would you like your password to contain uppercase letters?")) {
 
     builtArray = [...builtArray, ...upperAlphabet];
@@ -29,6 +28,15 @@ function generatePassword() {
   let password = "";
 
   let passwordLength = prompt("How long would you like your password to be?")
+  if (passwordLength < 8) {
+    alert("Must be greater than 8")
+    return
+  }
+  if (passwordLength > 128) {
+    alert("Must be less than 128")
+    return
+  }
+
   for (let i = 0; i < passwordLength; i++) {
 
     let generatedLetterIndex = Math.floor(Math.random() * builtArray.length);

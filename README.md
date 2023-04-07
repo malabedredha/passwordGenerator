@@ -1,1 +1,1 @@
-# passwordGenerator
+![Deployed website](./assets/passwordGeneratorSS.png)
