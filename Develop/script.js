@@ -10,8 +10,11 @@ let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let builtArray = []
 
 function generatePassword() {
+
   if (confirm("Would you like your password to contain uppercase letters?")) {
+
     builtArray = [...builtArray, ...upperAlphabet];
+
   }
 
   if (confirm("Would you like your password to contain lowercase letters?")) {
@@ -28,7 +31,8 @@ function generatePassword() {
   let passwordLength = prompt("How long would you like your password to be?")
   for (let i = 0; i < passwordLength; i++) {
 
-    password += "x";
+    let generatedLetterIndex = Math.floor(Math.random() * builtArray.length);
+    password += builtArray[generatedLetterIndex]
 
   }
 
