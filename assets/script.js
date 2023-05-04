@@ -34,7 +34,7 @@ function generatePassword() {
 
   let password = "";
 
-  let passwordLength = prompt("Password length? (Must be between 8-128 characters")
+  let passwordLength = prompt("Password length? (Must be between 8-128 characters)")
   if (passwordLength < 8) {
     alert("Must be greater than 8")
     return
