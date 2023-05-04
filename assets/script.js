@@ -1,19 +1,23 @@
-// Assignment Code
+// This creates the button the user clicks to generate a password
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 
+// These are arrays for uppercase letters, lowercase letters, numbers and special characters
 let upperAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
 let lowerAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+let specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ';', ':', '\'', '\"', '<', '>', ',', '.', '?', '/', '`', '~'];
 
+
+
+// This function asks the user to confirm if they want the options of letters and numbers and special characters in there password
 function generatePassword() {
   let builtArray = []
   if (confirm("Would you like your password to contain uppercase letters?")) {
-
     builtArray = [...builtArray, ...upperAlphabet];
-
   }
 
   if (confirm("Would you like your password to contain lowercase letters?")) {
@@ -24,10 +28,13 @@ function generatePassword() {
     builtArray = [...builtArray, ...numbers];
   }
 
+  if (confirm("Would you like your password to contain special characters?")) {
+    builtArray = [...builtArray, ...specialCharacters]
+  }
 
   let password = "";
 
-  let passwordLength = prompt("How long would you like your password to be?")
+  let passwordLength = prompt("Password length? (Must be between 8-128 characters")
   if (passwordLength < 8) {
     alert("Must be greater than 8")
     return
